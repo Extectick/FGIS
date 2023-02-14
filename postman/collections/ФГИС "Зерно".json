@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "3271aedd-0e86-4e26-ba9d-f330ce9885b8",
+		"name": "ФГИС \"Зерно\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25633240-3271aedd-0e86-4e26-ba9d-f330ce9885b8"
+	},
+	"item": [
+		{
+			"name": "Проверка",
+			"id": "f042ef4c-5df6-4eb9-b644-bf9ae4592863",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n\t<soap:Body>\r\n\t\t<SendRequestRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n\t\t\t<MessageData Id=\"SIGNED_BY_CALLER\">\r\n\t\t\t\t<MessageID>a294b598-00c8-453d-a5a8-79d6a6e7426d</MessageID>\r\n\t\t\t\t<ReferenceMessageID>a284b598-00b8-455d-a5a8-79d6a6e7426d</ReferenceMessageID>\r\n\t\t\t\t<MessagePrimaryContent>\r\n\t\t\t\t\t<Request xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.2\">\r\n\t\t\t\t\t\t<Dictionary>OKPD2</Dictionary>\r\n\t\t\t\t\t\t<IsActual>true</IsActual>\r\n\t\t\t\t\t\t<Paging xmlns:d7p1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" pageNumber=\"1\" pageLength=\"1000\"/>\r\n\t\t\t\t\t</Request>\r\n\t\t\t\t</MessagePrimaryContent>\r\n\t\t\t</MessageData>\r\n\t\t\t<InformationSystemSignature>\r\n\t\t\t\t<Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\">\r\n\t\t\t\t\t<SignedInfo>\r\n\t\t\t\t\t\t<CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n\t\t\t\t\t\t<SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n\t\t\t\t\t\t<Reference URI=\"#SIGNED_BY_CALLER\">\r\n\t\t\t\t\t\t\t<Transforms>\r\n\t\t\t\t\t\t\t\t<Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n\t\t\t\t\t\t\t\t<Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n\t\t\t\t\t\t\t</Transforms>\r\n\t\t\t\t\t\t\t<DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n\t\t\t\t\t\t\t<DigestValue>2rEI+W7/N2xFbg4PrDe+JlB8WpoM2SIt0UCyS5t1bFU=</DigestValue>\r\n\t\t\t\t\t\t</Reference>\r\n\t\t\t\t\t</SignedInfo>\r\n\t\t\t\t\t<SignatureValue>qyzyqpODZJx7Hw+BjqdBy1RPm+7s9J0kxzHsoWaqUSl3oUUTuKNXwJVQ63pLoam2\r\nkPTkAaNCB1BrWtdImxQhUA==</SignatureValue>\r\n\t\t\t\t\t<KeyInfo>\r\n\t\t\t\t\t\t<X509Data>\r\n\t\t\t\t\t\t\t<X509Certificate>MIINAzCCDLCgAwIBAgIQe51HAA6uJ5NLCg7OahlduzAKBggqhQMHAQEDAjCCAYkx\r\nIjAgBgkqhkiG9w0BCQEWE2NhX3RlbnNvckB0ZW5zb3IucnUxGDAWBgUqhQNkARIN\r\nMTAyNzYwMDc4Nzk5NDEaMBgGCCqFAwOBAwEBEgwwMDc2MDUwMTYwMzAxCzAJBgNV\r\nBAYTAlJVMTEwLwYDVQQIDCg3NiDQr9GA0L7RgdC70LDQstGB0LrQsNGPINC+0LHQ\r\nu9Cw0YHRgtGMMR8wHQYDVQQHDBbQsy4g0K/RgNC+0YHQu9Cw0LLQu9GMMTYwNAYD\r\nVQQJDC3QnNC+0YHQutC+0LLRgdC60LjQuSDQv9GA0L7RgdC/0LXQutGCLCDQtC4g\r\nMTIxMDAuBgNVBAsMJ9Cj0LTQvtGB0YLQvtCy0LXRgNGP0Y7RidC40Lkg0YbQtdC9\r\n0YLRgDEwMC4GA1UECgwn0J7QntCeICLQmtCe0JzQn9CQ0J3QmNCvICLQotCV0J3Q\r\nl9Ce0KAiMTAwLgYDVQQDDCfQntCe0J4gItCa0J7QnNCf0JDQndCY0K8gItCi0JXQ\r\nndCX0J7QoCIwHhcNMjExMjMwMDQxMDQ1WhcNMjMwMzMwMDQyMDQ1WjCCASwxJDAi\r\nBgNVBAgMG9Ce0LzRgdC60LDRjyDQvtCx0LvQsNGB0YLRjDELMAkGA1UEBhMCUlUx\r\nKjAoBgNVBCoMIdCh0YLQsNC90LjRgdC70LDQsiDQrtGA0YzQtdCy0LjRhzEZMBcG\r\nA1UEBAwQ0J3QvtCy0LjRh9C60L7QsjE7MDkGA1UEAwwy0J3QvtCy0LjRh9C60L7Q\r\nsiDQodGC0LDQvdC40YHQu9Cw0LIg0K7RgNGM0LXQstC40YcxIzAhBgkqhkiG9w0B\r\nCQEWFHB1dGluYWZpc2hAeWFuZGV4LnJ1MRowGAYIKoUDA4EDAQESDDU1MDYwMjY4\r\nNzI2NjEaMBgGBSqFA2QFEg8zMTc1NTQzMDAwOTU2NDExFjAUBgUqhQNkAxILMDYw\r\nMTI2MTkwMDgwZjAfBggqhQMHAQEBATATBgcqhQMCAiQABggqhQMHAQECAgNDAARA\r\nEPoJ0y0gCGyHUvcmdxgOJwNg7bQtKt77ZACrRdlwaYoyMlb/EwZPC+uvDnnOB/Zw\r\npRvxkFfoWsFxTIjRHzf1nqOCCUQwgglAMA4GA1UdDwEB/wQEAwID+DA4BgNVHSUE\r\nMTAvBgcqhQMCAiIZBgcqhQMCAiIaBgcqhQMCAiIGBggrBgEFBQcDAgYIKwYBBQUH\r\nAwQwHQYDVR0gBBYwFDAIBgYqhQNkcQEwCAYGKoUDZHECMCEGBSqFA2RvBBgMFtCa\r\n0YDQuNC/0YLQvtCf0YDQviBDU1AwDAYFKoUDZHIEAwIBATCCAloGByqFAwICMQIE\r\nggJNMIICSTCCAjcWEmh0dHBzOi8vc2Jpcy5ydS9jcAyCAhvQmNC90YTQvtGA0LzQ\r\nsNGG0LjQvtC90L3Ri9C1INGB0LjRgdGC0LXQvNGLLCDQv9GA0LDQstC+0L7QsdC7\r\n0LDQtNCw0YLQtdC70LXQvCDQuNC70Lgg0L7QsdC70LDQtNCw0YLQtdC70LXQvCDQ\r\nv9GA0LDQsiDQvdCwINC30LDQutC+0L3QvdGL0YUg0L7RgdC90L7QstCw0L3QuNGP\r\n0YUg0LrQvtGC0L7RgNGL0YUg0Y/QstC70Y/QtdGC0YHRjyDQntCe0J4gItCa0L7Q\r\nvNC/0LDQvdC40Y8gItCi0LXQvdC30L7RgCIsINCwINGC0LDQutC20LUg0LIg0LjQ\r\nvdGE0L7RgNC80LDRhtC40L7QvdC90YvRhSDRgdC40YHRgtC10LzQsNGFLCDRg9GH\r\n0LDRgdGC0LjQtSDQsiDQutC+0YLQvtGA0YvRhSDQv9GA0L7QuNGB0YXQvtC00LjR\r\ngiDQv9GA0Lgg0LjRgdC/0L7Qu9GM0LfQvtCy0LDQvdC40Lgg0YHQtdGA0YLQuNGE\r\n0LjQutCw0YLQvtCyINC/0YDQvtCy0LXRgNC60Lgg0LrQu9GO0YfQtdC5INGN0LvQ\r\ntdC60YLRgNC+0L3QvdC+0Lkg0L/QvtC00L/QuNGB0LgsINCy0YvQv9GD0YnQtdC9\r\n0L3Ri9GFINCe0J7QniAi0JrQvtC80L/QsNC90LjRjyAi0KLQtdC90LfQvtGAIgMC\r\nBeAEDBvKr/ghTzRoz6NmpzApBgNVHREEIjAgpB4wHDEaMBgGBSqFA2QFEg8zMTc1\r\nNTQzMDAwOTU2NDEwggHHBggrBgEFBQcBAQSCAbkwggG1MEYGCCsGAQUFBzABhjpo\r\ndHRwOi8vdGF4NC50ZW5zb3IucnUvb2NzcC10ZW5zb3JjYS0yMDIxX2dvc3QyMDEy\r\nL29jc3Auc3JmMF4GCCsGAQUFBzAChlJodHRwOi8vdGF4NC50ZW5zb3IucnUvdGVu\r\nc29yY2EtMjAyMV9nb3N0MjAxMi9jZXJ0ZW5yb2xsL3RlbnNvcmNhLTIwMjFfZ29z\r\ndDIwMTIuY3J0MDoGCCsGAQUFBzAChi5odHRwOi8vdGVuc29yLnJ1L2NhL3RlbnNv\r\ncmNhLTIwMjFfZ29zdDIwMTIuY3J0MEMGCCsGAQUFBzAChjdodHRwOi8vY3JsLnRl\r\nbnNvci5ydS90YXg0L2NhL3RlbnNvcmNhLTIwMjFfZ29zdDIwMTIuY3J0MEQGCCsG\r\nAQUFBzAChjhodHRwOi8vY3JsMi50ZW5zb3IucnUvdGF4NC9jYS90ZW5zb3JjYS0y\r\nMDIxX2dvc3QyMDEyLmNydDBEBggrBgEFBQcwAoY4aHR0cDovL2NybDMudGVuc29y\r\nLnJ1L3RheDQvY2EvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcnQwKwYDVR0QBCQw\r\nIoAPMjAyMTEyMzAwNDEwNDVagQ8yMDIzMDMzMDA0MTA0NVowggEzBgUqhQNkcASC\r\nASgwggEkDCsi0JrRgNC40L/RgtC+0J/RgNC+IENTUCIgKNCy0LXRgNGB0LjRjyA0\r\nLjApDFMi0KPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAICLQ\r\nmtGA0LjQv9GC0L7Qn9GA0L4g0KPQpiIg0LLQtdGA0YHQuNC4IDIuMAxP0KHQtdGA\r\n0YLQuNGE0LjQutCw0YIg0YHQvtC+0YLQstC10YLRgdGC0LLQuNGPIOKEliDQodCk\r\nLzEyNC0zOTY2INC+0YIgMTUuMDEuMjAyMQxP0KHQtdGA0YLQuNGE0LjQutCw0YIg\r\n0YHQvtC+0YLQstC10YLRgdGC0LLQuNGPIOKEliDQodCkLzEyOC0zODY4INC+0YIg\r\nMjMuMDcuMjAyMDCCAWgGA1UdHwSCAV8wggFbMFigVqBUhlJodHRwOi8vdGF4NC50\r\nZW5zb3IucnUvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi9jZXJ0ZW5yb2xsL3RlbnNv\r\ncmNhLTIwMjFfZ29zdDIwMTIuY3JsMDSgMqAwhi5odHRwOi8vdGVuc29yLnJ1L2Nh\r\nL3RlbnNvcmNhLTIwMjFfZ29zdDIwMTIuY3JsMEGgP6A9hjtodHRwOi8vY3JsLnRl\r\nbnNvci5ydS90YXg0L2NhL2NybC90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNybDBC\r\noECgPoY8aHR0cDovL2NybDIudGVuc29yLnJ1L3RheDQvY2EvY3JsL3RlbnNvcmNh\r\nLTIwMjFfZ29zdDIwMTIuY3JsMEKgQKA+hjxodHRwOi8vY3JsMy50ZW5zb3IucnUv\r\ndGF4NC9jYS9jcmwvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcmwwggFfBgNVHSME\r\nggFWMIIBUoAUV94jGe+BgSwM1x785820tkAh8TKhggEspIIBKDCCASQxHjAcBgkq\r\nhkiG9w0BCQEWD2RpdEBtaW5zdnlhei5ydTELMAkGA1UEBhMCUlUxGDAWBgNVBAgM\r\nDzc3INCc0L7RgdC60LLQsDEZMBcGA1UEBwwQ0LMuINCc0L7RgdC60LLQsDEuMCwG\r\nA1UECQwl0YPQu9C40YbQsCDQotCy0LXRgNGB0LrQsNGPLCDQtNC+0LwgNzEsMCoG\r\nA1UECgwj0JzQuNC90LrQvtC80YHQstGP0LfRjCDQoNC+0YHRgdC40LgxGDAWBgUq\r\nhQNkARINMTA0NzcwMjAyNjcwMTEaMBgGCCqFAwOBAwEBEgwwMDc3MTA0NzQzNzUx\r\nLDAqBgNVBAMMI9Cc0LjQvdC60L7QvNGB0LLRj9C30Ywg0KDQvtGB0YHQuNC4ggph\r\n582qAAAAAAUaMB0GA1UdDgQWBBTSk8aLx0PxStXVj/fk4iTiMhIZrjAKBggqhQMH\r\nAQEDAgNBAPDr4ZFQ0G8Oltjf7sDN8LA4HCtceqWp6SaRIVaHKj+Noc7yjahty8Ju\r\nieafF4qX1sE4z3Ka4zjaJHR3XY/ulz0=</X509Certificate>\r\n\t\t\t\t\t\t</X509Data>\r\n\t\t\t\t\t</KeyInfo>\r\n\t\t\t\t</Signature>\r\n\t\t\t</InformationSystemSignature>\r\n\t\t</SendRequestRequest>\r\n\t</soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание документа SDIZ",
+			"id": "e805cf8e-aec6-4c1a-8c94-dfce98402c44",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <zerno:SendRequestRequest xmlns:zerno=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\">\r\n            <zerno:MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <zerno:MessageID>3eb6773e-fed4-11ec-b786-e2b1cb7e6353</zerno:MessageID>\r\n                <!-- Для первого запроса серии указываем GUID тот же, что и в MessageID -->\r\n                <zerno:ReferenceMessageID>3eb6773e-fed4-11ec-b786-e2b1cb7e6353</zerno:ReferenceMessageID>\r\n                <zerno:MessagePrimaryContent>\r\n                    <ns:RequestCreateSDIZElevator lotNumber=\"string\" xmlns:ns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/sdiz/1.0.2\" xmlns:ns1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/sdiz/1.0.2\" xmlns:ns2=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/organizations/1.0.2\">\r\n                      <ns1:OperationSDIZElevator>\r\n                        <!--You have a CHOICE of the next 2 items at this level-->\r\n                        <ns1:AcceptanceElevator dateDogovor=\"20022-09-29\" numberDogovor=\"string\" storageArea=\"1.5E2\" storagePeriod=\"2024-09-19\" storageConditions=\"string\">\r\n                          <ns1:Operation>ACCEPTANCE</ns1:Operation>\r\n                          <ns1:storageType code=\"string\" name=\"string\" startDate=\"2018-11-01T08:36:46+03:00\" endDate=\"2024-09-19T05:02:49+04:00\"/>\r\n                          <!--1 or more repetitions:-->\r\n                          <ns1:ElevatorService code=\"string\" name=\"string\" startDate=\"2002-11-05T11:01:03+03:00\" endDate=\"2002-06-24T19:46:32+04:00\"/>\r\n                          <!--Optional:-->\r\n                          <ns1:Moving movingDate=\"2016-02-20+03:00\" movingStorageСonditions=\"string\">\r\n                            <ns1:MovingStoragePlace>\r\n                              <ns2:PostalCode>string</ns2:PostalCode>\r\n                              <ns2:Address>string</ns2:Address>\r\n                            </ns1:MovingStoragePlace>\r\n                            <ns1:storageType code=\"string\" name=\"string\" startDate=\"2019-08-19T17:35:10\" endDate=\"2018-02-04T17:35:59+03:00\"/>\r\n                          </ns1:Moving>\r\n                        </ns1:AcceptanceElevator>\r\n\r\n                      </ns1:OperationSDIZElevator>\r\n                    </ns:RequestCreateSDIZElevator>\r\n                </zerno:MessagePrimaryContent>\r\n            </zerno:MessageData>\r\n            <zerno:InformationSystemSignature>\r\n                <ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n                    <ds:SignedInfo>\r\n                        <ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                        <ds:SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n                        <!-- Указываем Id элемента, который подписываем -->\r\n                        <ds:Reference URI=\"#SIGNED_BY_CALLER\">\r\n                            <ds:Transforms>\r\n                                <ds:Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                                <ds:Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n                            </ds:Transforms>\r\n                            <ds:DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n                            <!-- Для примера, контенту не соответствует -->\r\n                            <ds:DigestValue>iouXU/Iq/WP3F/PBo0upUUssQFsWK4Zvmzyrp1K+uSY=</ds:DigestValue>\r\n                        </ds:Reference>\r\n                    </ds:SignedInfo>\r\n                    <!-- Для примера, контенту не соответствует -->\r\n                    <ds:SignatureValue>K3wPZ4frsNrn0RoFpWAEcXX8TRA7Bc6SkUtAFXBMdOUsBfHOE/+/4rDjQNSmzIXUV8OuCQY9D6hQBeDCbfnTiQ==</ds:SignatureValue>\r\n                    <ds:KeyInfo>\r\n                        <ds:X509Data>\r\n                            <!-- Для примера, контенту не соответствует -->\r\n                            <ds:X509Certificate>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</ds:X509Certificate>\r\n                        </ds:X509Data>\r\n                    </ds:KeyInfo>\r\n                </ds:Signature>\r\n            </zerno:InformationSystemSignature>\r\n        </zerno:SendRequestRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz?wsdl",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение данный SDIZ",
+			"id": "c2acc681-e6da-4db3-aad3-93d336bad071",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n\t<soap:Body>\r\n\t\t<SendRequestRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n\t\t\t<MessageData Id=\"SIGNED_BY_CALLER\">\r\n\t\t\t\t<MessageID>a294b598-00b8-455c-b5a8-69d6a6e9426d</MessageID>\r\n\t\t\t\t<ReferenceMessageID>a284b598-00b8-455d-a5a8-79d6a6e7426d</ReferenceMessageID>\r\n\t\t\t\t<MessagePrimaryContent>\r\n                    <ns:RequestGetListLot dateFrom=\"2008-09-29\" dateTo=\"2023-09-19\" lotNumber=\"2221062714/23/0082\" lotID=\"21421\" xmlns:ns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/lots/1.0.2\" xmlns:ns1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/organizations/1.0.2\">\r\n                    </ns:RequestGetListLot>\r\n\t\t\t\t</MessagePrimaryContent>\r\n\t\t\t</MessageData>\r\n\t\t\t<InformationSystemSignature>\r\n\t\t\t\t<Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\">\r\n\t\t\t\t\t<SignedInfo>\r\n\t\t\t\t\t\t<CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n\t\t\t\t\t\t<SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n\t\t\t\t\t\t<Reference URI=\"#SIGNED_BY_CALLER\">\r\n\t\t\t\t\t\t\t<Transforms>\r\n\t\t\t\t\t\t\t\t<Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n\t\t\t\t\t\t\t\t<Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n\t\t\t\t\t\t\t</Transforms>\r\n\t\t\t\t\t\t\t<DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n\t\t\t\t\t\t\t<DigestValue>llW6l3+DLWG0yP9sBVHTuNL3aKBThY8FSp/MVAwwb5o=</DigestValue>\r\n\t\t\t\t\t\t</Reference>\r\n\t\t\t\t\t</SignedInfo>\r\n\t\t\t\t\t<SignatureValue>K3wPZ4frsNrn0RoFpWAEcXX8TRA7Bc6SkUtAFXBMdOUsBfHOE/+/4rDjQNSmzIXUV8OuCQY9D6hQBeDCbfnTiQ==</SignatureValue>\r\n\t\t\t\t\t<KeyInfo>\r\n\t\t\t\t\t\t<X509Data>\r\n\t\t\t\t\t\t\t<X509Certificate>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</X509Certificate>\r\n\t\t\t\t\t\t</X509Data>\r\n\t\t\t\t\t</KeyInfo>\r\n\t\t\t\t</Signature>\r\n\t\t\t</InformationSystemSignature>\r\n\t\t</SendRequestRequest>\r\n\t</soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание из остатков новую партию зерна",
+			"id": "a98fad34-b2f5-4a4d-939a-71b163e3823b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <zerno:SendRequestRequest xmlns:zerno=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\">\r\n            <zerno:MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <zerno:MessageID>3eb6773e-fed4-12ec-b786-e2b1cb7e6353</zerno:MessageID>\r\n                <!-- Для первого запроса серии указываем GUID тот же, что и в MessageID -->\r\n                <zerno:ReferenceMessageID>3eb6773e-fed4-11ec-b786-e2b1cb7e6353</zerno:ReferenceMessageID>\r\n                <zerno:MessagePrimaryContent>\r\n                \t<ns:RequestCreateLot xmlns:ns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/lots/1.0.2\" xmlns:ns1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/lots/1.0.2\" xmlns:ns2=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/organizations/1.0.2\" xmlns:ns3=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/common/1.0.2\">\r\n\t\t\t\t\t  <!--You have a CHOICE of the next 5 items at this level-->\r\n\t\t\t\t\t  <ns1:LotFromResidues amount=\"100\"/>\r\n\t\t\t\t\t  <ns1:Crop>\r\n\t\t\t\t\t    <ns3:OKPD2>string</ns3:OKPD2>\r\n\t\t\t\t\t    <!--Optional:-->\r\n\t\t\t\t\t    <ns3:TNVED>string</ns3:TNVED>\r\n\t\t\t\t\t  </ns1:Crop>\r\n\t\t\t\t\t  <ns1:Target>string</ns1:Target>\r\n\t\t\t\t\t  <ns1:Purpose>string</ns1:Purpose>\r\n\t\t\t\t\t  <ns1:HarvestYear>100</ns1:HarvestYear>\r\n\t\t\t\t\t  <ns1:StoragePlace>\r\n\t\t\t\t\t    <ns2:PostalCode>630136</ns2:PostalCode>\r\n\t\t\t\t\t    <ns2:Address>string</ns2:Address>\r\n\t\t\t\t\t  </ns1:StoragePlace>\r\n\t\t\t\t\t  <ns1:ListValueQualityIndicator>\r\n\t\t\t\t\t    <!--Zero or more repetitions:-->\r\n\t\t\t\t\t    <ns3:Value qualityIndicatorCode=\"string\">string</ns3:Value>\r\n\t\t\t\t\t  </ns1:ListValueQualityIndicator>\r\n\t\t\t\t\t  <!--Zero or more repetitions:-->\r\n\t\t\t\t\t  <ns1:DocumentOnLot number=\"string\" date=\"2008-09-29\">\r\n\t\t\t\t\t    <ns1:KindDoc>string</ns1:KindDoc>\r\n\t\t\t\t\t  </ns1:DocumentOnLot>\r\n\t\t\t\t\t</ns:RequestCreateLot>\r\n                </zerno:MessagePrimaryContent>\r\n            </zerno:MessageData>\r\n            <zerno:InformationSystemSignature>\r\n                <ds:Signature xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n                    <ds:SignedInfo>\r\n                        <ds:CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                        <ds:SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n                        <!-- Указываем Id элемента, который подписываем -->\r\n                        <ds:Reference URI=\"#SIGNED_BY_CALLER\">\r\n                            <ds:Transforms>\r\n                                <ds:Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                                <ds:Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n                            </ds:Transforms>\r\n                            <ds:DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n                            <!-- Для примера, контенту не соответствует -->\r\n                            <ds:DigestValue>2rEI+W7/N2xFbg4PrDe+JlB8WpoM2SIt0UCyS5t1bFU=</ds:DigestValue>\r\n                        </ds:Reference>\r\n                    </ds:SignedInfo>\r\n                    <!-- Для примера, контенту не соответствует -->\r\n                    <ds:SignatureValue>qyzyqpODZJx7Hw+BjqdBy1RPm+7s9J0kxzHsoWaqUSl3oUUTuKNXwJVQ63pLoam2\r\nkPTkAaNCB1BrWtdImxQhUA==</ds:SignatureValue>\r\n                    <ds:KeyInfo>\r\n                        <ds:X509Data>\r\n                            <!-- Для примера, контенту не соответствует -->\r\n                            <ds:X509Certificate>MIINAzCCDLCgAwIBAgIQe51HAA6uJ5NLCg7OahlduzAKBggqhQMHAQEDAjCCAYkx\r\nIjAgBgkqhkiG9w0BCQEWE2NhX3RlbnNvckB0ZW5zb3IucnUxGDAWBgUqhQNkARIN\r\nMTAyNzYwMDc4Nzk5NDEaMBgGCCqFAwOBAwEBEgwwMDc2MDUwMTYwMzAxCzAJBgNV\r\nBAYTAlJVMTEwLwYDVQQIDCg3NiDQr9GA0L7RgdC70LDQstGB0LrQsNGPINC+0LHQ\r\nu9Cw0YHRgtGMMR8wHQYDVQQHDBbQsy4g0K/RgNC+0YHQu9Cw0LLQu9GMMTYwNAYD\r\nVQQJDC3QnNC+0YHQutC+0LLRgdC60LjQuSDQv9GA0L7RgdC/0LXQutGCLCDQtC4g\r\nMTIxMDAuBgNVBAsMJ9Cj0LTQvtGB0YLQvtCy0LXRgNGP0Y7RidC40Lkg0YbQtdC9\r\n0YLRgDEwMC4GA1UECgwn0J7QntCeICLQmtCe0JzQn9CQ0J3QmNCvICLQotCV0J3Q\r\nl9Ce0KAiMTAwLgYDVQQDDCfQntCe0J4gItCa0J7QnNCf0JDQndCY0K8gItCi0JXQ\r\nndCX0J7QoCIwHhcNMjExMjMwMDQxMDQ1WhcNMjMwMzMwMDQyMDQ1WjCCASwxJDAi\r\nBgNVBAgMG9Ce0LzRgdC60LDRjyDQvtCx0LvQsNGB0YLRjDELMAkGA1UEBhMCUlUx\r\nKjAoBgNVBCoMIdCh0YLQsNC90LjRgdC70LDQsiDQrtGA0YzQtdCy0LjRhzEZMBcG\r\nA1UEBAwQ0J3QvtCy0LjRh9C60L7QsjE7MDkGA1UEAwwy0J3QvtCy0LjRh9C60L7Q\r\nsiDQodGC0LDQvdC40YHQu9Cw0LIg0K7RgNGM0LXQstC40YcxIzAhBgkqhkiG9w0B\r\nCQEWFHB1dGluYWZpc2hAeWFuZGV4LnJ1MRowGAYIKoUDA4EDAQESDDU1MDYwMjY4\r\nNzI2NjEaMBgGBSqFA2QFEg8zMTc1NTQzMDAwOTU2NDExFjAUBgUqhQNkAxILMDYw\r\nMTI2MTkwMDgwZjAfBggqhQMHAQEBATATBgcqhQMCAiQABggqhQMHAQECAgNDAARA\r\nEPoJ0y0gCGyHUvcmdxgOJwNg7bQtKt77ZACrRdlwaYoyMlb/EwZPC+uvDnnOB/Zw\r\npRvxkFfoWsFxTIjRHzf1nqOCCUQwgglAMA4GA1UdDwEB/wQEAwID+DA4BgNVHSUE\r\nMTAvBgcqhQMCAiIZBgcqhQMCAiIaBgcqhQMCAiIGBggrBgEFBQcDAgYIKwYBBQUH\r\nAwQwHQYDVR0gBBYwFDAIBgYqhQNkcQEwCAYGKoUDZHECMCEGBSqFA2RvBBgMFtCa\r\n0YDQuNC/0YLQvtCf0YDQviBDU1AwDAYFKoUDZHIEAwIBATCCAloGByqFAwICMQIE\r\nggJNMIICSTCCAjcWEmh0dHBzOi8vc2Jpcy5ydS9jcAyCAhvQmNC90YTQvtGA0LzQ\r\nsNGG0LjQvtC90L3Ri9C1INGB0LjRgdGC0LXQvNGLLCDQv9GA0LDQstC+0L7QsdC7\r\n0LDQtNCw0YLQtdC70LXQvCDQuNC70Lgg0L7QsdC70LDQtNCw0YLQtdC70LXQvCDQ\r\nv9GA0LDQsiDQvdCwINC30LDQutC+0L3QvdGL0YUg0L7RgdC90L7QstCw0L3QuNGP\r\n0YUg0LrQvtGC0L7RgNGL0YUg0Y/QstC70Y/QtdGC0YHRjyDQntCe0J4gItCa0L7Q\r\nvNC/0LDQvdC40Y8gItCi0LXQvdC30L7RgCIsINCwINGC0LDQutC20LUg0LIg0LjQ\r\nvdGE0L7RgNC80LDRhtC40L7QvdC90YvRhSDRgdC40YHRgtC10LzQsNGFLCDRg9GH\r\n0LDRgdGC0LjQtSDQsiDQutC+0YLQvtGA0YvRhSDQv9GA0L7QuNGB0YXQvtC00LjR\r\ngiDQv9GA0Lgg0LjRgdC/0L7Qu9GM0LfQvtCy0LDQvdC40Lgg0YHQtdGA0YLQuNGE\r\n0LjQutCw0YLQvtCyINC/0YDQvtCy0LXRgNC60Lgg0LrQu9GO0YfQtdC5INGN0LvQ\r\ntdC60YLRgNC+0L3QvdC+0Lkg0L/QvtC00L/QuNGB0LgsINCy0YvQv9GD0YnQtdC9\r\n0L3Ri9GFINCe0J7QniAi0JrQvtC80L/QsNC90LjRjyAi0KLQtdC90LfQvtGAIgMC\r\nBeAEDBvKr/ghTzRoz6NmpzApBgNVHREEIjAgpB4wHDEaMBgGBSqFA2QFEg8zMTc1\r\nNTQzMDAwOTU2NDEwggHHBggrBgEFBQcBAQSCAbkwggG1MEYGCCsGAQUFBzABhjpo\r\ndHRwOi8vdGF4NC50ZW5zb3IucnUvb2NzcC10ZW5zb3JjYS0yMDIxX2dvc3QyMDEy\r\nL29jc3Auc3JmMF4GCCsGAQUFBzAChlJodHRwOi8vdGF4NC50ZW5zb3IucnUvdGVu\r\nc29yY2EtMjAyMV9nb3N0MjAxMi9jZXJ0ZW5yb2xsL3RlbnNvcmNhLTIwMjFfZ29z\r\ndDIwMTIuY3J0MDoGCCsGAQUFBzAChi5odHRwOi8vdGVuc29yLnJ1L2NhL3RlbnNv\r\ncmNhLTIwMjFfZ29zdDIwMTIuY3J0MEMGCCsGAQUFBzAChjdodHRwOi8vY3JsLnRl\r\nbnNvci5ydS90YXg0L2NhL3RlbnNvcmNhLTIwMjFfZ29zdDIwMTIuY3J0MEQGCCsG\r\nAQUFBzAChjhodHRwOi8vY3JsMi50ZW5zb3IucnUvdGF4NC9jYS90ZW5zb3JjYS0y\r\nMDIxX2dvc3QyMDEyLmNydDBEBggrBgEFBQcwAoY4aHR0cDovL2NybDMudGVuc29y\r\nLnJ1L3RheDQvY2EvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcnQwKwYDVR0QBCQw\r\nIoAPMjAyMTEyMzAwNDEwNDVagQ8yMDIzMDMzMDA0MTA0NVowggEzBgUqhQNkcASC\r\nASgwggEkDCsi0JrRgNC40L/RgtC+0J/RgNC+IENTUCIgKNCy0LXRgNGB0LjRjyA0\r\nLjApDFMi0KPQtNC+0YHRgtC+0LLQtdGA0Y/RjtGJ0LjQuSDRhtC10L3RgtGAICLQ\r\nmtGA0LjQv9GC0L7Qn9GA0L4g0KPQpiIg0LLQtdGA0YHQuNC4IDIuMAxP0KHQtdGA\r\n0YLQuNGE0LjQutCw0YIg0YHQvtC+0YLQstC10YLRgdGC0LLQuNGPIOKEliDQodCk\r\nLzEyNC0zOTY2INC+0YIgMTUuMDEuMjAyMQxP0KHQtdGA0YLQuNGE0LjQutCw0YIg\r\n0YHQvtC+0YLQstC10YLRgdGC0LLQuNGPIOKEliDQodCkLzEyOC0zODY4INC+0YIg\r\nMjMuMDcuMjAyMDCCAWgGA1UdHwSCAV8wggFbMFigVqBUhlJodHRwOi8vdGF4NC50\r\nZW5zb3IucnUvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi9jZXJ0ZW5yb2xsL3RlbnNv\r\ncmNhLTIwMjFfZ29zdDIwMTIuY3JsMDSgMqAwhi5odHRwOi8vdGVuc29yLnJ1L2Nh\r\nL3RlbnNvcmNhLTIwMjFfZ29zdDIwMTIuY3JsMEGgP6A9hjtodHRwOi8vY3JsLnRl\r\nbnNvci5ydS90YXg0L2NhL2NybC90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNybDBC\r\noECgPoY8aHR0cDovL2NybDIudGVuc29yLnJ1L3RheDQvY2EvY3JsL3RlbnNvcmNh\r\nLTIwMjFfZ29zdDIwMTIuY3JsMEKgQKA+hjxodHRwOi8vY3JsMy50ZW5zb3IucnUv\r\ndGF4NC9jYS9jcmwvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcmwwggFfBgNVHSME\r\nggFWMIIBUoAUV94jGe+BgSwM1x785820tkAh8TKhggEspIIBKDCCASQxHjAcBgkq\r\nhkiG9w0BCQEWD2RpdEBtaW5zdnlhei5ydTELMAkGA1UEBhMCUlUxGDAWBgNVBAgM\r\nDzc3INCc0L7RgdC60LLQsDEZMBcGA1UEBwwQ0LMuINCc0L7RgdC60LLQsDEuMCwG\r\nA1UECQwl0YPQu9C40YbQsCDQotCy0LXRgNGB0LrQsNGPLCDQtNC+0LwgNzEsMCoG\r\nA1UECgwj0JzQuNC90LrQvtC80YHQstGP0LfRjCDQoNC+0YHRgdC40LgxGDAWBgUq\r\nhQNkARINMTA0NzcwMjAyNjcwMTEaMBgGCCqFAwOBAwEBEgwwMDc3MTA0NzQzNzUx\r\nLDAqBgNVBAMMI9Cc0LjQvdC60L7QvNGB0LLRj9C30Ywg0KDQvtGB0YHQuNC4ggph\r\n582qAAAAAAUaMB0GA1UdDgQWBBTSk8aLx0PxStXVj/fk4iTiMhIZrjAKBggqhQMH\r\nAQEDAgNBAPDr4ZFQ0G8Oltjf7sDN8LA4HCtceqWp6SaRIVaHKj+Noc7yjahty8Ju\r\nieafF4qX1sE4z3Ka4zjaJHR3XY/ulz0=</ds:X509Certificate>\r\n                        </ds:X509Data>\r\n                    </ds:KeyInfo>\r\n                </ds:Signature>\r\n            </zerno:InformationSystemSignature>\r\n        </zerno:SendRequestRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz?wsdl",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Тест",
+			"id": "8946e686-65fe-4b2d-8a44-6bc3b30dd6d6",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true,
+					"content-type": true,
+					"content-length": true,
+					"host": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "7356",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/xml; charset=UTF-8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <SendRequestRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n            <MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <MessageID>a294c598-00c8-453d-a5a8-79d6a6e7426d</MessageID>\r\n                <ReferenceMessageID>a284b598-00b8-455d-a5a8-79d7a6e7326d</ReferenceMessageID>\r\n                <MessagePrimaryContent>\r\n                    <Request xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.2\">\r\n                        <Dictionary>OKPD2</Dictionary>\r\n                        <IsActual>true</IsActual>\r\n                        <Paging xmlns:d7p1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" pageNumber=\"1\" pageLength=\"1000\"/>\r\n                    </Request>\r\n                </MessagePrimaryContent>\r\n            </MessageData>\r\n            <InformationSystemSignature>\r\n                <Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\">\r\n                    <SignedInfo>\r\n                        <CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                        <SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n                        <Reference URI=\"#SIGNED_BY_CALLER\">\r\n                            <Transforms>\r\n                                <Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                                <Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n                            </Transforms>\r\n                            <DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n                            <DigestValue>Ix243CIhoVsDWnkgaF590ZzdYHTso9R9KyVDA/mdMAA=</DigestValue>\r\n                        </Reference>\r\n                    </SignedInfo>\r\n                    <SignatureValue>Xen2eV3tXJlUQ2ycSRj9eZE7GXdK28y4/7abTBhQ/fIkqiKvANNg9/DcyqW+SoXJLPciFHkubfL/7Xqv6zEmrw==</SignatureValue>\r\n                    <KeyInfo>\r\n                        <X509Data>\r\n                            <X509Certificate>MIINrzCCDVygAwIBAgIQdy5EAA6uaaNFk/MuLff2QTAKBggqhQMHAQEDAjCCAYkx\r\nIjAgBgkqhkiG9w0BCQEWE2NhX3RlbnNvckB0ZW5zb3IucnUxGDAWBgUqhQNkARIN\r\nMTAyNzYwMDc4Nzk5NDEaMBgGCCqFAwOBAwEBEgwwMDc2MDUwMTYwMzAxCzAJBgNV\r\nBAYTAlJVMTEwLwYDVQQIDCg3NiDQr9GA0L7RgdC70LDQstGB0LrQsNGPINC+0LHQ\r\nu9Cw0YHRgtGMMR8wHQYDVQQHDBbQsy4g0K/RgNC+0YHQu9Cw0LLQu9GMMTYwNAYD\r\nVQQJDC3QnNC+0YHQutC+0LLRgdC60LjQuSDQv9GA0L7RgdC/0LXQutGCLCDQtC4g\r\nMTIxMDAuBgNVBAsMJ9Cj0LTQvtGB0YLQvtCy0LXRgNGP0Y7RidC40Lkg0YbQtdC9\r\n0YLRgDEwMC4GA1UECgwn0J7QntCeICLQmtCe0JzQn9CQ0J3QmNCvICLQotCV0J3Q\r\nl9Ce0KAiMTAwLgYDVQQDDCfQntCe0J4gItCa0J7QnNCf0JDQndCY0K8gItCi0JXQ\r\nndCX0J7QoCIwHhcNMjExMjMwMDM1ODE1WhcNMjMwMzMwMDQwODE1WjCCAgMxQjBA\r\nBgNVBAkMOdCj0JvQmNCm0JAg0JTQldCa0JDQkdCg0JjQodCi0J7Qkiwg0JTQntCc\r\nIDI0Nywg0J7QpNCY0KEgMzEyMDAGA1UECAwp0J3QvtCy0L7RgdC40LHQuNGA0YHQ\r\nutCw0Y8g0L7QsdC70LDRgdGC0YwxKjAoBgNVBAcMIdCT0J7QoNCe0JQg0J3QntCS\r\n0J7QodCY0JHQmNCg0KHQmjELMAkGA1UEBhMCUlUxKjAoBgNVBCoMIdCh0YLQsNC9\r\n0LjRgdC70LDQsiDQrtGA0YzQtdCy0LjRhzEZMBcGA1UEBAwQ0J3QvtCy0LjRh9C6\r\n0L7QsjExMC8GA1UEAwwo0J7QntCeICLQldCS0KDQntCi0KDQldCZ0JQg0KHQmNCR\r\n0JjQoNCsIjEZMBcGA1UEDAwQ0JTQmNCg0JXQmtCi0J7QoDExMC8GA1UECgwo0J7Q\r\nntCeICLQldCS0KDQntCi0KDQldCZ0JQg0KHQmNCR0JjQoNCsIjEjMCEGCSqGSIb3\r\nDQEJARYUcHV0aW5hZmlzaEB5YW5kZXgucnUxGjAYBggqhQMDgQMBARIMNTUwNjAy\r\nNjg3MjY2MRUwEwYFKoUDZAQSCjU0MDU5ODY0MDgxFjAUBgUqhQNkAxILMDYwMTI2\r\nMTkwMDgxGDAWBgUqhQNkARINMTE2NTQ3NjE3NTEzODBmMB8GCCqFAwcBAQEBMBMG\r\nByqFAwICJAAGCCqFAwcBAQICA0MABEBDOCIdZY3Av3z6BuCFjZRgdPMphZwngHRX\r\nifyGobyBfcuoB++mgHWZRygmKSjmG0Ay4XSYmaCY4ztHCCb8gsIJo4IJGTCCCRUw\r\nDgYDVR0PAQH/BAQDAgP4MDgGA1UdJQQxMC8GByqFAwICIhkGByqFAwICIhoGByqF\r\nAwICIgYGCCsGAQUFBwMCBggrBgEFBQcDBDAdBgNVHSAEFjAUMAgGBiqFA2RxATAI\r\nBgYqhQNkcQIwIQYFKoUDZG8EGAwW0JrRgNC40L/RgtC+0J/RgNC+IENTUDAMBgUq\r\nhQNkcgQDAgEBMIICWgYHKoUDAgIxAgSCAk0wggJJMIICNxYSaHR0cHM6Ly9zYmlz\r\nLnJ1L2NwDIICG9CY0L3RhNC+0YDQvNCw0YbQuNC+0L3QvdGL0LUg0YHQuNGB0YLQ\r\ntdC80YssINC/0YDQsNCy0L7QvtCx0LvQsNC00LDRgtC10LvQtdC8INC40LvQuCDQ\r\nvtCx0LvQsNC00LDRgtC10LvQtdC8INC/0YDQsNCyINC90LAg0LfQsNC60L7QvdC9\r\n0YvRhSDQvtGB0L3QvtCy0LDQvdC40Y/RhSDQutC+0YLQvtGA0YvRhSDRj9Cy0LvR\r\nj9C10YLRgdGPINCe0J7QniAi0JrQvtC80L/QsNC90LjRjyAi0KLQtdC90LfQvtGA\r\nIiwg0LAg0YLQsNC60LbQtSDQsiDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Ri9GF\r\nINGB0LjRgdGC0LXQvNCw0YUsINGD0YfQsNGB0YLQuNC1INCyINC60L7RgtC+0YDR\r\ni9GFINC/0YDQvtC40YHRhdC+0LTQuNGCINC/0YDQuCDQuNGB0L/QvtC70YzQt9C+\r\n0LLQsNC90LjQuCDRgdC10YDRgtC40YTQuNC60LDRgtC+0LIg0L/RgNC+0LLQtdGA\r\n0LrQuCDQutC70Y7Rh9C10Lkg0Y3Qu9C10LrRgtGA0L7QvdC90L7QuSDQv9C+0LTQ\r\nv9C40YHQuCwg0LLRi9C/0YPRidC10L3QvdGL0YUg0J7QntCeICLQmtC+0LzQv9Cw\r\n0L3QuNGPICLQotC10L3Qt9C+0YAiAwIF4AQMG8qv+CFPNGjPo2anMIIBxwYIKwYB\r\nBQUHAQEEggG5MIIBtTBGBggrBgEFBQcwAYY6aHR0cDovL3RheDQudGVuc29yLnJ1\r\nL29jc3AtdGVuc29yY2EtMjAyMV9nb3N0MjAxMi9vY3NwLnNyZjBeBggrBgEFBQcw\r\nAoZSaHR0cDovL3RheDQudGVuc29yLnJ1L3RlbnNvcmNhLTIwMjFfZ29zdDIwMTIv\r\nY2VydGVucm9sbC90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNydDA6BggrBgEFBQcw\r\nAoYuaHR0cDovL3RlbnNvci5ydS9jYS90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNy\r\ndDBDBggrBgEFBQcwAoY3aHR0cDovL2NybC50ZW5zb3IucnUvdGF4NC9jYS90ZW5z\r\nb3JjYS0yMDIxX2dvc3QyMDEyLmNydDBEBggrBgEFBQcwAoY4aHR0cDovL2NybDIu\r\ndGVuc29yLnJ1L3RheDQvY2EvdGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcnQwRAYI\r\nKwYBBQUHMAKGOGh0dHA6Ly9jcmwzLnRlbnNvci5ydS90YXg0L2NhL3RlbnNvcmNh\r\nLTIwMjFfZ29zdDIwMTIuY3J0MCsGA1UdEAQkMCKADzIwMjExMjMwMDM1ODE0WoEP\r\nMjAyMzAzMzAwMzU4MTRaMIIBMwYFKoUDZHAEggEoMIIBJAwrItCa0YDQuNC/0YLQ\r\nvtCf0YDQviBDU1AiICjQstC10YDRgdC40Y8gNC4wKQxTItCj0LTQvtGB0YLQvtCy\r\n0LXRgNGP0Y7RidC40Lkg0YbQtdC90YLRgCAi0JrRgNC40L/RgtC+0J/RgNC+INCj\r\n0KYiINCy0LXRgNGB0LjQuCAyLjAMT9Ch0LXRgNGC0LjRhNC40LrQsNGCINGB0L7Q\r\nvtGC0LLQtdGC0YHRgtCy0LjRjyDihJYg0KHQpC8xMjQtMzk2NiDQvtGCIDE1LjAx\r\nLjIwMjEMT9Ch0LXRgNGC0LjRhNC40LrQsNGCINGB0L7QvtGC0LLQtdGC0YHRgtCy\r\n0LjRjyDihJYg0KHQpC8xMjgtMzg2OCDQvtGCIDIzLjA3LjIwMjAwggFoBgNVHR8E\r\nggFfMIIBWzBYoFagVIZSaHR0cDovL3RheDQudGVuc29yLnJ1L3RlbnNvcmNhLTIw\r\nMjFfZ29zdDIwMTIvY2VydGVucm9sbC90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNy\r\nbDA0oDKgMIYuaHR0cDovL3RlbnNvci5ydS9jYS90ZW5zb3JjYS0yMDIxX2dvc3Qy\r\nMDEyLmNybDBBoD+gPYY7aHR0cDovL2NybC50ZW5zb3IucnUvdGF4NC9jYS9jcmwv\r\ndGVuc29yY2EtMjAyMV9nb3N0MjAxMi5jcmwwQqBAoD6GPGh0dHA6Ly9jcmwyLnRl\r\nbnNvci5ydS90YXg0L2NhL2NybC90ZW5zb3JjYS0yMDIxX2dvc3QyMDEyLmNybDBC\r\noECgPoY8aHR0cDovL2NybDMudGVuc29yLnJ1L3RheDQvY2EvY3JsL3RlbnNvcmNh\r\nLTIwMjFfZ29zdDIwMTIuY3JsMIIBXwYDVR0jBIIBVjCCAVKAFFfeIxnvgYEsDNce\r\n/OfNtLZAIfEyoYIBLKSCASgwggEkMR4wHAYJKoZIhvcNAQkBFg9kaXRAbWluc3Z5\r\nYXoucnUxCzAJBgNVBAYTAlJVMRgwFgYDVQQIDA83NyDQnNC+0YHQutCy0LAxGTAX\r\nBgNVBAcMENCzLiDQnNC+0YHQutCy0LAxLjAsBgNVBAkMJdGD0LvQuNGG0LAg0KLQ\r\nstC10YDRgdC60LDRjywg0LTQvtC8IDcxLDAqBgNVBAoMI9Cc0LjQvdC60L7QvNGB\r\n0LLRj9C30Ywg0KDQvtGB0YHQuNC4MRgwFgYFKoUDZAESDTEwNDc3MDIwMjY3MDEx\r\nGjAYBggqhQMDgQMBARIMMDA3NzEwNDc0Mzc1MSwwKgYDVQQDDCPQnNC40L3QutC+\r\n0LzRgdCy0Y/Qt9GMINCg0L7RgdGB0LjQuIIKYefNqgAAAAAFGjAdBgNVHQ4EFgQU\r\nFEIixEESsFJr1QQKszqUM9siqigwCgYIKoUDBwEBAwIDQQDw/YzxPE4qdXHLG13n\r\n+m8hszxqcpWCAWh+5hrpHe+NlBWY++IJDO5JWqeauGUdNe/qEgWZ6b6DVyKneBjL\r\nkDBU</X509Certificate>\r\n                        </X509Data>\r\n                    </KeyInfo>\r\n                </Signature>\r\n            </InformationSystemSignature>\r\n        </SendRequestRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка партий зерна ",
+			"id": "381103be-f074-4790-b6da-17dab98bfccb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <SendResponseRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n            <MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <MessageID>a294c508-00c8-453d-a5a8-79d6a6e7426d</MessageID>\r\n                <ReferenceMessageID>a284b598-00b8-455d-a5a8-79d7a6e7326d</ReferenceMessageID>\r\n                <MessagePrimaryContent>\r\n                    <ns:RequestGetListLot dateFrom=\"2008-09-29\" dateTo=\"2023-09-19\" lotNumber=\"string\" lotID=\"100\" status=\"CANCELED\" xmlns:ns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/lots/1.0.2\" xmlns:ns1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/organizations/1.0.2\">\r\n                        <ns:OKPD2>string</ns:OKPD2>\r\n                    </ns:RequestGetListLot>\r\n                </MessagePrimaryContent>\r\n            </MessageData>\r\n            <InformationSystemSignature>\r\n                <Signature xmlns=\"http://www.w3.org/2000/09/xmldsig#\">\r\n                    <SignedInfo>\r\n                        <CanonicalizationMethod Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                        <SignatureMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256\"/>\r\n                        <Reference URI=\"#SIGNED_BY_CALLER\">\r\n                            <Transforms>\r\n                                <Transform Algorithm=\"http://www.w3.org/2001/10/xml-exc-c14n#\"/>\r\n                                <Transform Algorithm=\"urn://smev-gov-ru/xmldsig/transform\"/>\r\n                            </Transforms>\r\n                            <DigestMethod Algorithm=\"urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256\"/>\r\n                            <DigestValue>2rEI+W7/N2xFbg4PrDe+JlB8WpoM2SIt0UCyS5t1bFU=</DigestValue>\r\n                        </Reference>\r\n                    </SignedInfo>\r\n                    <SignatureValue>qyzyqpODZJx7Hw+BjqdBy1RPm+7s9J0kxzHsoWaqUSl3oUUTuKNXwJVQ63pLoam2kPTkAaNCB1BrWtdImxQhUA==</SignatureValue>\r\n                    <KeyInfo>\r\n                        <X509Data>\r\n                            <X509Certificate>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</X509Certificate>\r\n                        </X509Data>\r\n                    </KeyInfo>\r\n                </Signature>\r\n            </InformationSystemSignature>\r\n        </SendResponseRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{website}}/ws/api/fgiz",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a1d0815c-e286-48fe-986b-7a51bcdfbd05",
+						"exec": [
+							"pm.environment.set(\"random_number\", _.random(1000, 9999))\r",
+							"pm.environment.set(\"OKPD2\", \"OKPD2\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a123196c-1161-43f3-89e1-f046238f5ae1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "eefbc304-c49b-457b-b277-beee48a71f74",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <SendRequestRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n            <MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <MessageID>a294c509-10c8-553d-a5a8-79d6a6e3{{random_number}}</MessageID>\r\n                <ReferenceMessageID>a294c509-10c8-553d-a5a8-79d6a6e3{{random_number}}</ReferenceMessageID>\r\n                <MessagePrimaryContent>\r\n                    <dicts:Request xmlns:dicts=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.2\">\r\n                        <dicts:Dictionary>{{OKPD2}}</dicts:Dictionary>\r\n                    </dicts:Request>\r\n                </MessagePrimaryContent>\r\n            </MessageData>\r\n            <!-- ЭЦП  -->{{certificate}}  <!-- ЭЦП  -->\r\n        </SendRequestRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{website}}/ws/api/fgiz",
+					"host": [
+						"{{website}}"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e2e18db7-312d-413b-b032-655c5b2a4504",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5161a1c7-e067-43b2-b357-707013c8e05b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5295e729-9cc1-43bc-8dac-2058fb15c83f",
+			"key": "api_base",
+			"value": "https://demo-zerno.fors.ru/ws/api"
+		}
+	]
+}
