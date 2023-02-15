@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "3271aedd-0e86-4e26-ba9d-f330ce9885b8",
-		"name": "ФГИС \"Зерно\"",
+		"name": "Хлам ФГИС \"Зерно\"",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "25633240-3271aedd-0e86-4e26-ba9d-f330ce9885b8"
 	},
@@ -264,6 +264,76 @@
 						"ws",
 						"api",
 						"fgiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Запрос Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c6594fa-dcf0-4cbf-9198-e1f1579d04fa",
+						"exec": [
+							"function random_str(len) {\r",
+							"    chrs = 'abdehkmnpswxzABDEFGHKMNPQRSTWXZ123456789';\r",
+							"    var str = '';\r",
+							"    for (var i = 0; i < len; i++) {\r",
+							"        var pos = Math.floor(Math.random() * chrs.length);\r",
+							"        str += chrs.substring(pos,pos+1);\r",
+							"    }\r",
+							"    return (str+\"-\");\r",
+							"}\r",
+							"\r",
+							"var MessageID = (random_str(8) + random_str(4) + random_str(4) + random_str(4) + \"liderproduct\");\r",
+							"\r",
+							"pm.globals.set(\"MessageID\", MessageID);\r",
+							"pm.collectionVariables.set(\"MessageID\", MessageID);\r",
+							"// logs\r",
+							"console.log(MessageID);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "382f98c1-b94c-4e32-8bdc-5fe124032149",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <soap:Body>\r\n        <zerno:SendRequestRequest xmlns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:zerno=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.2\" xmlns:dicts=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.2\">\r\n            <zerno:MessageData Id=\"SIGNED_BY_CALLER\">\r\n                <zerno:MessageID>{{MessageID}}</zerno:MessageID>\r\n                <zerno:ReferenceMessageID>{{MessageID}}</zerno:ReferenceMessageID>\r\n                <zerno:MessagePrimaryContent>\r\n                    <ns:RequestCreateLot xmlns:ns=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/lots/1.0.2\" xmlns:ns1=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/lots/1.0.2\" xmlns:ns2=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/organizations/1.0.2\" xmlns:ns3=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/common/1.0.2\" xmlns:dicts=\"urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.2\">\r\n                        <ns1:LotFromResidues amount=\"3650\"/>\r\n                        <ns1:Crop>\r\n                            <ns3:OKPD2>01.11.20</ns3:OKPD2>\r\n                        </ns1:Crop>\r\n                        <ns1:Target>Пищевые</ns1:Target>\r\n                        <ns1:Purpose>Переработка</ns1:Purpose>\r\n                        <ns1:HarvestYear>2022</ns1:HarvestYear>\r\n                        <ns1:StoragePlace>\r\n                            <ns2:PostalCode>630521</ns2:PostalCode>\r\n                            <ns2:Address>Российская Федерация, Новосибирская обл, р-н Новосибирский, п Тулинский</ns2:Address>\r\n                        </ns1:StoragePlace>\r\n                        <ns1:ListValueQualityIndicator>\r\n                            <ns3:Value qualityIndicatorCode=\"368\">10</ns3:Value>\r\n                            <ns3:Value qualityIndicatorCode=\"84\">1</ns3:Value>\r\n                        </ns1:ListValueQualityIndicator> \r\n                    </ns:RequestCreateLot>\r\n                </zerno:MessagePrimaryContent>\r\n            </zerno:MessageData>\r\n            <!-- ЭЦП  -->{{eurotradeSertificate}}  <!-- ЭЦП  -->\r\n        </zerno:SendRequestRequest>\r\n    </soap:Body>\r\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demo-zerno.fors.ru/ws/api/fgiz",
+					"protocol": "https",
+					"host": [
+						"demo-zerno",
+						"fors",
+						"ru"
+					],
+					"path": [
+						"ws",
+						"api",
+						"fgiz"
+					],
+					"query": [
+						{
+							"key": "MessageID",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},

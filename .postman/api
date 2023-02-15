@@ -5,7 +5,7 @@ id = abbf6254-fdab-47bf-89ec-5e0e2c4e27b3
 
 [relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"25633240-3271aedd-0e86-4e26-ba9d-f330ce9885b8","path":"ФГИС \"Зерно\".json","metaData":{}}
+files[] = {"id":"25633240-3271aedd-0e86-4e26-ba9d-f330ce9885b8","path":"Хлам ФГИС \"Зерно\".json","metaData":{}}
 files[] = {"id":"25633240-a766d394-3667-4d7c-af00-c84852ad1c0b","path":"Цепочка запросов ФГИС \"Зерно\".json","metaData":{}}
 
 [relations.collections.metaData]
